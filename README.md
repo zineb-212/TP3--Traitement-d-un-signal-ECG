@@ -89,34 +89,34 @@ title("La différence")
 
 >Souvent, l'ECG est contaminé par un bruit du secteur 50 Hz qui doit être supprimé.
 
-5. Appliquer un filtre Notch idéal pour supprimer cette composante. Les filtres Notch sont utilisés pour rejeter une seule fréquence d'une bande de fréquence donnée.
+4. Appliquer un filtre Notch idéal pour supprimer cette composante. Les filtres Notch sont utilisés pour rejeter une seule fréquence d'une bande de fréquence donnée.
 
 ```matlab
 % Elimination interference 50Hz
 Notch = ones(size(x));
-fcn = 50;
-index_hcn = ceil(fcn*N/fs)+1;
+fn = 50;
+index_hcn = ceil(fn*N/fs)+1;
 Notch(index_hcn)=0;
 Notch(index_hcn+2)=0;
 ecg2_freq = Notch.*fft(ecg1);
 ecg_2 =ifft(ecg2_freq,"symmetric");
 ```
-6. Visualiser le signal ecg2 après filtrage. 
+5. Visualiser le signal ecg2 après filtrage. 
 ```matlab
 plot(t,ecg_2);
 title("signal filtré")
 ```
-<img width="972" alt="w" src="https://user-images.githubusercontent.com/89936910/210172650-a0eb7ac9-454e-491d-ae05-11c42468be92.png">
+<img width="797" alt="6" src="https://user-images.githubusercontent.com/121026257/212537565-679fe4a2-73fd-4ef0-bdca-449fde714afa.PNG">
 
 # Amélioration du rapport signal sur bruit 
 
 >Le signal ECG est également atteint par des parasites en provenance de l’activité musculaire extracardiaque du patient. La quantité de bruit est proportionnelle à la >largeur de bande du signal ECG. Une bande passante élevée donnera plus de bruit dans les signaux, et limiter la bande passante peut enlever des détails importants du signal.
 
-7. Chercher un compromis sur la fréquence de coupure, qui permettra de préserver la forme du signal ECG et réduire au maximum le bruit. Tester différents choix, puistracer et commenter les résultats
+6. Chercher un compromis sur la fréquence de coupure, qui permettra de préserver la forme du signal ECG et réduire au maximum le bruit. Tester différents choix, puis tracer et commenter les résultats
 ```matlab
 pass_bas = zeros(size(A));
-fcb = 30;
-index_hcb = ceil(fcb*N/fs);
+fc = 30;
+index_hcb = ceil(fc*N/fs);
 pass_bas(1:index_hcb)=1;
 pass_bas(N-index_hcb+1:N)=1;
 
@@ -128,7 +128,6 @@ xlim([0.5 1.5])
 subplot(212)
 plot(t,ecg3);
 xlim([0.5 1.5])
-
 ```
 >avec Frequence 30 hz
 <img width="991" alt="f" src="https://user-images.githubusercontent.com/89936910/210173263-b5a354fe-3c31-4a69-8b8b-76f05da76c43.png">
@@ -139,7 +138,7 @@ xlim([0.5 1.5])
 
 >on remarque que le taux d'ondulation de bruit descend
 
-8. Visualiser une période du nouveau signal filtré ecg3 et identifier autant d'ondes que possible dans ce signal (Voir la partie introduction).
+7. Visualiser une période du nouveau signal filtré ecg3 et identifier autant d'ondes que possible dans ce signal (Voir la partie introduction).
 
 ```matlab 
 plot(t,ecg3);
@@ -151,7 +150,7 @@ xlim([0.5 1.5])
 
 La fréquence cardiaque peut être identifiée à partir de la fonction d'autocorrélation du signal ECG. Cela se fait en cherchant le premier maximum local après le maximum global (à tau = 0) de cette fonction. 
 
-9. Ecrire un programme permettant de calculer l’autocorrélation du signal ECG, puis de chercher cette fréquence cardiaque de façon automatique. Utiliser ce programme sur le signal traité ecg3 ou ecg2 et sur le signal ECG non traité. NB : il faut limiter l’intervalle de recherche à la plage possible de la fréquence cardiaque. 
+8. Ecrire un programme permettant de calculer l’autocorrélation du signal ECG, puis de chercher cette fréquence cardiaque de façon automatique. Utiliser ce programme sur le signal traité ecg3 ou ecg2 et sur le signal ECG non traité. NB : il faut limiter l’intervalle de recherche à la plage possible de la fréquence cardiaque. 
 
 ```matlab
 
@@ -159,7 +158,7 @@ La fréquence cardiaque peut être identifiée à partir de la fonction d'autoco
 stem(lags/fs,c)
 
 ```
-10. Votre programme trouve-t-il le bon pouls ? 
+9. Votre programme trouve-t-il le bon pouls ? 
 <img width="999" alt="k" src="https://user-images.githubusercontent.com/89936910/210174477-df004b0c-b95b-4d42-a0ac-dc971260433d.png">
 
 > Oui on prend la 2 eme pick Frequence = 60*0.921 =54,72 Hz
