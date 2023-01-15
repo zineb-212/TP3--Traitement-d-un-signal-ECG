@@ -129,13 +129,13 @@ subplot(212)
 plot(t,ecg3);
 xlim([0.5 1.5])
 ```
->avec Frequence 30 hz
+>avec une frequence de 30 hz
 <img width="793" alt="7" src="https://user-images.githubusercontent.com/121026257/212538213-44043361-5a20-4816-b393-f1f9752f8c2d.PNG">
->avec fraquence 60 HZ
+>avec une fraquence de 40 HZ
 
 <img width="801" alt="8" src="https://user-images.githubusercontent.com/121026257/212538217-ef0a2f3f-f5a0-400a-ac06-40581aad1b2d.PNG">
 
->on remarque que le taux d'ondulation de bruit diminue
+>on remarque que le taux d'ondulation du bruit diminue
 
 7. Visualiser une période du nouveau signal filtré ecg3 et identifier autant d'ondes que possible dans ce signal (Voir la partie introduction).
 
