@@ -38,7 +38,7 @@ x=ecg;
 fs=500;
 N=length(x)
 ts=1/fs
-%%Representation du signal en fct du temps
+%Representation du signal en fct du temps
 t=(0:N-1)*ts;
 plot(t,x);
 title("Signal ECG");
