@@ -143,23 +143,20 @@ xlim([0.5 1.5])
 plot(t,ecg3);
 xlim([0.5 1.5])
 ```
-<img width="900" alt="l" src="https://user-images.githubusercontent.com/89936910/210173609-0dc5bef4-c1db-4fe9-9806-013bfa9a77bf.png">
+<img width="804" alt="9" src="https://user-images.githubusercontent.com/121026257/212538383-33612741-d4b6-4c86-b883-abb69e520085.PNG">
 
 # Identification de la fréquence cardiaque avec la fonction d’autocorrélation
 
 La fréquence cardiaque peut être identifiée à partir de la fonction d'autocorrélation du signal ECG. Cela se fait en cherchant le premier maximum local après le maximum global (à tau = 0) de cette fonction. 
 
-8. Ecrire un programme permettant de calculer l’autocorrélation du signal ECG, puis de chercher cette fréquence cardiaque de façon automatique. Utiliser ce programme sur le signal traité ecg3 ou ecg2 et sur le signal ECG non traité. NB : il faut limiter l’intervalle de recherche à la plage possible de la fréquence cardiaque. 
+8. Ecrire un programme permettant de calculer l’autocorrélation du signal ECG, puis de chercher cette fréquence cardiaque de façon automatique. Utiliser ce programme sur le signal traité ecg3 ou ecg2 et sur le signal ECG non traité. 
 
 ```matlab
-
 [c,lags] = xcorr(ecg3,ecg3);
 stem(lags/fs,c)
-
 ```
 9. Votre programme trouve-t-il le bon pouls ? 
-<img width="999" alt="k" src="https://user-images.githubusercontent.com/89936910/210174477-df004b0c-b95b-4d42-a0ac-dc971260433d.png">
 
-> Oui on prend la 2 eme pick Frequence = 60*0.921 =54,72 Hz
+> Oui 60*0.921 =54,72 Hz
 
 # 
