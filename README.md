@@ -155,8 +155,8 @@ La fréquence cardiaque peut être identifiée à partir de la fonction d'autoco
 [c,lags] = xcorr(ecg3,ecg3);
 stem(lags/fs,c)
 ```
-9. Votre programme trouve-t-il le bon pouls ? 
-
+9.Trouvons-nous le bon pouls ? 
+<img width="810" alt="10" src="https://user-images.githubusercontent.com/121026257/212538642-d393047b-e255-485f-a463-1d331b0796a8.PNG">
 > Oui 60*0.921 =54,72 Hz
 
 # 
