@@ -69,29 +69,21 @@ h(N-index_h+1:N)=0;
 ecg1_freq = h.*y;
 ecg1 =ifft(ecg1_freq,"symmetric");
 plot(t,ecg);
+%Nouveau signal
+plot(t,ecg1);
 title("signal filtré")
-plot(t,ecg1);
 ```
+>Nouveau signal
+<img width="785" alt="4" src="https://user-images.githubusercontent.com/121026257/212537150-e87595df-1999-4cd6-b62d-eb1ba38488f3.PNG">
 
-
-4- Tracer le nouveau signal ecg1
-
-```matlab
-plot(t,ecg1);
-title("ecg1")
-
-```
-<img width="981" alt="hhh" src="https://user-images.githubusercontent.com/89936910/210171272-81b47334-ee5d-43a2-8c49-1360c861d64c.png">
-
- >et noter les différences par rapport au signal d’origine. 
+ >Les différences par rapport au signal d’origine. 
  
  ```matlab
-plot(t,A-ecg1);
+plot(t,x-ecg1);
 title("La différence")
 
 ```
 
- <img width="982" alt="QQQ" src="https://user-images.githubusercontent.com/89936910/210171406-ac3be1c9-0000-4324-8456-d5148ca13498.png">
 
 # Suppression des interférences des lignes électriques 50H
 
