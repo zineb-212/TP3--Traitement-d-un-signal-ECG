@@ -11,7 +11,7 @@ Un électrocardiogramme (ECG) est une représentation graphique de l’activatio
 
 Ci-dessous, voici un schéma représentant une représentation classique d’une courbe d’un ECG. Ce schéma se nomme un « Complexe QRS » mettant en évidence le bon fonctionnement d’un cycle cardiaque.
 
-<img width="194" alt="1" src="https://user-images.githubusercontent.com/121026257/212536135-795589b5-8876-46ee-89ca-f3c101a3bfb0.PNG">
+<img width="300" alt="1" src="https://user-images.githubusercontent.com/121026257/212536135-795589b5-8876-46ee-89ca-f3c101a3bfb0.PNG">
 
 
 L’onde P représente la première étape du cycle où les oreillettes (ou atriums) se contractent permettant le passage du sang, à travers les valves auriculoventriculaires, vers les ventricules.Ensuite, le complexe QRS symbolise à la fois la contraction ventriculaire (permettant l’éjection du sang vers les artères) notamment par le pic en R, dans le même temps, le relâchement des oreillettes entraîne le remplissage de celles-ci en attente d’un nouveau cycle).
@@ -44,19 +44,16 @@ plot(t,x);
 title("Signal ECG");
 ```
 
+<img width="806" alt="2" src="https://user-images.githubusercontent.com/121026257/212536524-55658872-8480-4780-97b0-b58e2f174191.PNG">
 
-
->puis faire un zoom sur une période du signal.
-
-<img width="982" alt="33333" src="https://user-images.githubusercontent.com/89936910/210170607-eaa8a809-d673-4b70-bf8f-19639b8caa7b.png">
-
-3- Pour supprimer les bruits à très basse fréquence dues aux mouvements du corps,on utilisera un filtre idéal passe-haut. Pour ce faire, calculer tout d’abord la TFD du signal ECG, régler les fréquences inférieures à 0.5Hz à zéro, puis effectuer une TFDI pour restituer le signal filtré. 
+3-Suppression des bruits à très basse fréquence dues aux mouvements du corps en utilisant un filtre idéal passe-haut.
 
 ```matlab
-%le spectre Amplitude
- y = fft(A);
- f = (0:N-1)*(fs/N);
- fshift = (-N/2:N/2-1)*(fs/N);
+y = fft(x);
+f = (0:N-1)*(fs/N);
+fshift = (-N/2:N/2-1)*(fs/N);
+plot(fshift,fftshift(abs(y)))
+title("spectre Amplitude")
 
 %TFD
 subplot(2,2,2)
