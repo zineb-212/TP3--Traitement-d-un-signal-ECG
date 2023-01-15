@@ -133,7 +133,7 @@ xlim([0.5 1.5])
 <img width="793" alt="7" src="https://user-images.githubusercontent.com/121026257/212538213-44043361-5a20-4816-b393-f1f9752f8c2d.PNG">
 >avec une fraquence de 40 HZ
 
-<img width="801" alt="8" src="https://user-images.githubusercontent.com/121026257/212538217-ef0a2f3f-f5a0-400a-ac06-40581aad1b2d.PNG">
+<img width="838" alt="11" src="https://user-images.githubusercontent.com/121026257/212539057-4d7ec590-c17d-4a13-af6c-c3ef2fd8f78d.PNG">
 
 >on remarque que le taux d'ondulation du bruit diminue
 
