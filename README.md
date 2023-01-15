@@ -74,6 +74,7 @@ plot(t,ecg1);
 title("signal filtré")
 ```
 >Nouveau signal
+
 <img width="785" alt="4" src="https://user-images.githubusercontent.com/121026257/212537150-e87595df-1999-4cd6-b62d-eb1ba38488f3.PNG">
 
  >Les différences par rapport au signal d’origine. 
@@ -81,9 +82,8 @@ title("signal filtré")
  ```matlab
 plot(t,x-ecg1);
 title("La différence")
-
 ```
-
+<img width="827" alt="5" src="https://user-images.githubusercontent.com/121026257/212537303-f4f338fe-ec68-46b0-b4e7-05dedd782d70.PNG">
 
 # Suppression des interférences des lignes électriques 50H
 
@@ -93,20 +93,17 @@ title("La différence")
 
 ```matlab
 % Elimination interference 50Hz
- 
-Notch = ones(size(A));
+Notch = ones(size(x));
 fcn = 50;
 index_hcn = ceil(fcn*N/fs)+1;
 Notch(index_hcn)=0;
 Notch(index_hcn+2)=0;
-
 ecg2_freq = Notch.*fft(ecg1);
-ecg2 =ifft(ecg2_freq,"symmetric");
+ecg_2 =ifft(ecg2_freq,"symmetric");
 ```
-
 6. Visualiser le signal ecg2 après filtrage. 
 ```matlab
-plot(t,ecg2);
+plot(t,ecg_2);
 title("signal filtré")
 ```
 <img width="972" alt="w" src="https://user-images.githubusercontent.com/89936910/210172650-a0eb7ac9-454e-491d-ae05-11c42468be92.png">
