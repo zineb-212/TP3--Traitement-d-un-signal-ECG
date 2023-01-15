@@ -11,6 +11,7 @@ Un électrocardiogramme (ECG) est une représentation graphique de l’activatio
 
 Ci-dessous, voici un schéma représentant une représentation classique d’une courbe d’un ECG. Ce schéma se nomme un « Complexe QRS » mettant en évidence le bon fonctionnement d’un cycle cardiaque.
 
+<img width="194" alt="1" src="https://user-images.githubusercontent.com/121026257/212536135-795589b5-8876-46ee-89ca-f3c101a3bfb0.PNG">
 
 
 L’onde P représente la première étape du cycle où les oreillettes (ou atriums) se contractent permettant le passage du sang, à travers les valves auriculoventriculaires, vers les ventricules.Ensuite, le complexe QRS symbolise à la fois la contraction ventriculaire (permettant l’éjection du sang vers les artères) notamment par le pic en R, dans le même temps, le relâchement des oreillettes entraîne le remplissage de celles-ci en attente d’un nouveau cycle).
@@ -21,35 +22,29 @@ dessous de cette valeur, le patient est en « bradycardie », au-dessus de cette
 
 Les signaux ECG sont contaminés avec différentes sources de bruits. Les bruits de hautes fréquences sont provoqués par l’activité musculaire extracardiaque et les interférences dues aux appareils électriques, et des bruits de basses fréquences provoqués par les mouvements du corps liés à la respiration, les changements physicochimiques induits par l’électrode posée sur la peau et les micro variations du flux sanguin. Le filtrage de ces bruits est une étape très importante pour faire un diagnostic réussi. 
 
-# Suppression du bruit provoqué par les mouvements du corps 
+# Suppression du bruit provoqué par les mouvements du corps.
 
-1- Sauvegarder le signal ECG sur votre répertoire de travail, puis charger-le dans Matlab à l’aide la commande load.
+1- Chargement du signal dans Matlab à l’aide la commande *load*.
 ```matlab
-clear all 
+clear all
 close all
-clc 
-
-%exporter le fichier au matlab
-load('ecg.mat');
-%garder dans un variable
-A=ecg;
+clc
+load("ecg.mat");
+x=ecg;
 ```
-2- Ce signal a été échantillonné avec une fréquence de 500Hz. Tracer-le en fonction du temps,  
+2-Representation du signal en fonction du temps.  
 
 ```matlab
-%caluculer la taille
-N=length(A);
-%nbr de 
 fs=500;
-Te=1/F;
-t =[0:Te:(N-1)*Te];
-% taracage du fct
-title(" sig ECG");
-plot(t,A);
-
+N=length(x)
+ts=1/fs
+%%Representation du signal en fct du temps
+t=(0:N-1)*ts;
+plot(t,x);
+title("Signal ECG");
 ```
 
-<img width="981" alt="eee" src="https://user-images.githubusercontent.com/89936910/210170558-06a308a8-c728-4788-bbf8-e39db38115db.png">
+
 
 >puis faire un zoom sur une période du signal.
 
@@ -185,7 +180,3 @@ stem(lags/fs,c)
 > Oui on prend la 2 eme pick Frequence = 60*0.921 =54,72 Hz
 
 # 
-
-
-   - Réalisé par : Shadia AIT EL CADI
-   - Encadré par : [Pr. AMMOUR Alae]
