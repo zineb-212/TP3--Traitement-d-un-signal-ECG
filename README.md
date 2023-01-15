@@ -135,7 +135,7 @@ xlim([0.5 1.5])
 
 <img width="838" alt="11" src="https://user-images.githubusercontent.com/121026257/212539057-4d7ec590-c17d-4a13-af6c-c3ef2fd8f78d.PNG">
 
->on remarque que le taux d'ondulation du bruit diminue
+>on remarque que la frequence de coupure est au environ de 40
 
 7. Visualiser une période du nouveau signal filtré ecg3 et identifier autant d'ondes que possible dans ce signal (Voir la partie introduction).
 
