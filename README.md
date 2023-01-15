@@ -1,4 +1,4 @@
-# TP3--Traitement-d-un-signal-ECG
+# TP3--Traitement d'un signal ECG
 
 # Objectifs 
 
