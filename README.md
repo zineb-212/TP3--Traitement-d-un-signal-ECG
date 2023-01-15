@@ -1,4 +1,4 @@
-# TP3--Traitement-d-un-signal-ECG# TP3- Traitement d’un signal ECG
+# TP3--Traitement-d-un-signal-ECG
 
 # Objectifs 
 
@@ -54,27 +54,26 @@ f = (0:N-1)*(fs/N);
 fshift = (-N/2:N/2-1)*(fs/N);
 plot(fshift,fftshift(abs(y)))
 title("spectre Amplitude")
+```
+<img width="812" alt="3" src="https://user-images.githubusercontent.com/121026257/212536873-aeb49d23-4fad-4f48-99b9-7787b8ccff29.PNG">
 
+```matlab
 %TFD
-subplot(2,2,2)
-plot(fshift,fftshift(abs(y)))
-title("spectre Amplitude")
-%spectre Amplitude centré
-%suppression du bruit des movements de corps
-
-h = ones(size(A));
+%%suppression du bruit des movements de corps
+h = ones(size(x));
 fh = 0.5;
 index_h = ceil(fh*N/fs);
 h(1:index_h)=0;
 h(N-index_h+1:N)=0;
-
 %TFDI pour restituer le signal filtré
 ecg1_freq = h.*y;
 ecg1 =ifft(ecg1_freq,"symmetric");
-subplot(211)
 plot(t,ecg);
-
+title("signal filtré")
+plot(t,ecg1);
 ```
+
+
 4- Tracer le nouveau signal ecg1
 
 ```matlab
