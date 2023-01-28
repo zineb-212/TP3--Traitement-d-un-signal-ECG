@@ -77,7 +77,7 @@ title("signal filtré")
 
 <img width="785" alt="4" src="https://user-images.githubusercontent.com/121026257/212537150-e87595df-1999-4cd6-b62d-eb1ba38488f3.PNG">
 
- >Les différences par rapport au signal d’origine. 
+ > Les différences par rapport au signal d’origine. 
  
  ```matlab
 plot(t,x-ecg1);
@@ -87,7 +87,7 @@ title("La différence")
 
 # Suppression des interférences des lignes électriques 50H
 
->Souvent, l'ECG est contaminé par un bruit du secteur 50 Hz qui doit être supprimé.
+> Souvent, l'ECG est contaminé par un bruit du secteur 50 Hz qui doit être supprimé.
 
 4. Appliquer un filtre Notch idéal pour supprimer cette composante. Les filtres Notch sont utilisés pour rejeter une seule fréquence d'une bande de fréquence donnée.
 
@@ -110,7 +110,7 @@ title("signal filtré")
 
 # Amélioration du rapport signal sur bruit 
 
->Le signal ECG est également atteint par des parasites en provenance de l’activité musculaire extracardiaque du patient. La quantité de bruit est proportionnelle à la largeur de bande du signal ECG. Une bande passante élevée donnera plus de bruit dans les signaux, et limiter la bande passante peut enlever des détails importants du signal.
+> Le signal ECG est également atteint par des parasites en provenance de l’activité musculaire extracardiaque du patient. La quantité de bruit est proportionnelle à la largeur de bande du signal ECG. Une bande passante élevée donnera plus de bruit dans les signaux, et limiter la bande passante peut enlever des détails importants du signal.
 
 6. Chercher un compromis sur la fréquence de coupure, qui permettra de préserver la forme du signal ECG et réduire au maximum le bruit. Tester différents choix, puis tracer et commenter les résultats
 ```matlab
@@ -129,13 +129,14 @@ subplot(212)
 plot(t,ecg3);
 xlim([0.5 1.5])
 ```
->avec une frequence de 30 hz
+> avec une frequence de 30 hz
 <img width="793" alt="7" src="https://user-images.githubusercontent.com/121026257/212538213-44043361-5a20-4816-b393-f1f9752f8c2d.PNG">
->avec une fraquence de 40 HZ
+
+> avec une fraquence de 40 HZ
 
 <img width="838" alt="11" src="https://user-images.githubusercontent.com/121026257/212539057-4d7ec590-c17d-4a13-af6c-c3ef2fd8f78d.PNG">
 
->on remarque que la frequence de coupure est au environ de 40
+> on remarque que la frequence de coupure est au environ de 40
 
 7. Visualiser une période du nouveau signal filtré ecg3 et identifier autant d'ondes que possible dans ce signal (Voir la partie introduction).
 
