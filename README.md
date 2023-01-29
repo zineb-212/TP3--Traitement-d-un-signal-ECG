@@ -160,4 +160,7 @@ stem(lags/fs,c)
 <img width="810" alt="10" src="https://user-images.githubusercontent.com/121026257/212538642-d393047b-e255-485f-a463-1d331b0796a8.PNG">
 > Oui 60*0.921 =54,72 Hz
 
-# 
+# Réalisation 
+#### Par : M'HIFED Zineb
+#### Spécialité : Robotique et Cobotique
+#### Sous la supervision de : Pr AMMOUR Alae
